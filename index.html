@@ -41,10 +41,9 @@ function displayField(doc, source, name) {
     }
 }
 
-console.log(_GET);
-console.log(_GET['token_json']);
-console.log(_GET.token_json);
 var info = JSON.parse(_GET.token_json);
+console.log(info);
+
 var fields = ["access_token", "refresh_token", "expires_in", "refresh_expires_in"];
 for (var field in fields) {
   displayField(document, info, field);
