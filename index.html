@@ -1,6 +1,15 @@
 <html>
     <head>
-        <script>
+    </head>
+<body>
+<h1>Welcome to OSIO</h1>
+<table>
+    <tr>
+        <td>Acccess token</td><td><div id="accessToken"></div></td>
+    </tr>
+</table>
+</body>
+    <script>
             var _GET = (function() {
     var _get = {};
     var re = /[?&]([^=&]+)(=?)([^&]*)/g;
@@ -14,13 +23,4 @@ console.log(_GET['token_json']);
 console.log(_GET.token_json);
 document.getElementById("accessToken").innerText = _GET.token_json;
             </script>
-    </head>
-<body>
-<h1>Welcome to OSIO</h1>
-<table>
-    <tr>
-        <td>Acccess token</td><td><div id="accessToken"></div></td>
-    </tr>
-</table>
-</body>
-<html>
+    <html>
