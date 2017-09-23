@@ -5,10 +5,10 @@
 <h1>Welcome to OSIO</h1>
 <table>
     <tr>
-        <td>Acccess token</td><td><div id="accessToken"></div></td>
+        <td>Acccess token</td><td><div id="access_token"></div></td>
     </tr>
     <tr>
-        <td>Refresh token</td><td><div id="refreshToken"></div></td>
+        <td>Refresh token</td><td><div id="refresh_token"></div></td>
     </tr>
 </table>
 </body>
@@ -25,7 +25,7 @@ console.log(_GET);
 console.log(_GET['token_json']);
 console.log(_GET.token_json);
 var info = JSON.parse(_GET.token_json);
-document.getElementById("accessToken").innerText =info.accessToken;
-document.getElementById("refreshToken").innerText =info.refreshToken;
+document.getElementById("access_token").innerText =info.access_token;
+document.getElementById("refresh_token").innerText =info.refresh_token;
             </script>
     <html>
