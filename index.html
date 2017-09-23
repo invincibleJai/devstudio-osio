@@ -7,6 +7,9 @@
     <tr>
         <td>Acccess token</td><td><div id="accessToken"></div></td>
     </tr>
+    <tr>
+        <td>Refresh token</td><td><div id="refreshToken"></div></td>
+    </tr>
 </table>
 </body>
     <script>
@@ -21,6 +24,8 @@
 console.log(_GET);
 console.log(_GET['token_json']);
 console.log(_GET.token_json);
-document.getElementById("accessToken").innerText = _GET.token_json;
+var info = JSON.parse(_GET.token_json);
+document.getElementById("accessToken").innerText =info.accessToken;
+document.getElementById("refreshToken").innerText =info.refreshToken;
             </script>
     <html>
