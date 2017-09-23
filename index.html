@@ -5,10 +5,16 @@
 <h1>Welcome to OSIO</h1>
 <table>
     <tr>
-        <td>Acccess token</td><td><div id="access_token"></div></td>
+        <td>Acccess token</td><td><div id="access_token_text"></div></td><td><div id="access_token" style="display: none"></div></td>
     </tr>
     <tr>
-        <td>Refresh token</td><td><div id="refresh_token"></div></td>
+        <td>Expires in</td><td><div id="expires_in_text"></div></td><td><div id="expires_in" style="display: none"></div></td>
+    </tr>
+    <tr>
+        <td>Refresh token</td><td><div id="refresh_token_text"></div></td><td><div id="refresh_token" style="display: none"></div></td>
+    </tr>
+    <tr>
+        <td>Expires in</td><td><div id="refresh_expires_in_text"></div></td><td><div id="refresh_expires_in" style="display: none"></div></td>
     </tr>
 </table>
 </body>
@@ -21,11 +27,27 @@
     return _get;
 })();
 
+
+function displayField(doc, source, name) {
+    if (source[name]) {
+        var element = doc.getElementById(name + "_text");
+        if (element) {
+            element.innerText = source[name].substring(0, 16);
+        }
+        element = doc.getElementById(name);
+        if (element) {
+            element.innerText = source[name];
+        }
+    }
+}
+
 console.log(_GET);
 console.log(_GET['token_json']);
 console.log(_GET.token_json);
 var info = JSON.parse(_GET.token_json);
-document.getElementById("access_token").innerText =info.access_token;
-document.getElementById("refresh_token").innerText =info.refresh_token;
+var fields = ["access_token", "refresh_token", "expires_in", "refresh_expires_in"];
+for (var field in fields) {
+  displayField(document, info, field);
+}
             </script>
     <html>
