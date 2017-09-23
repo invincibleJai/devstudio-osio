@@ -1,5 +1,25 @@
 <html>
+    <head>
+        <script>
+            var _GET = (function() {
+    var _get = {};
+    var re = /[?&]([^=&]+)(=?)([^&]*)/g;
+    while (m = re.exec(location.search))
+        _get[decodeURIComponent(m[1])] = (m[2] == '=' ? decodeURIComponent(m[3]) : true);
+    return _get;
+})();
+
+console.log(_GET);
+console.log(_GET['token_json']);
+console.log(_GET.token_json);
+            </script>
+    </head>
 <body>
 <h1>Welcome to OSIO</h1>
+<table>
+    <tr>
+        <td>Acccess token</td><td><div id="accessToken"></div></td>
+    </tr>
+</table>
 </body>
 <html>
