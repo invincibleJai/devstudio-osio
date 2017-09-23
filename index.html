@@ -45,8 +45,8 @@ var info = JSON.parse(_GET.token_json);
 console.log(info);
 
 var fields = ["access_token", "refresh_token", "expires_in", "refresh_expires_in"];
-for (var field in fields) {
-  displayField(document, info, field);
+for (var i=0; i < fields.length;++i) {
+  displayField(document, info, fields[i]);
 }
             </script>
     <html>
