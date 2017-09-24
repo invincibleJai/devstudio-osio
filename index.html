@@ -2,7 +2,7 @@
     <head>
     </head>
 <body>
-<h1>Welcome to OSIO</h1>
+<h1>Welcome to OpenShift.io</h1>
 <table>
     <tr>
         <td>Acccess token</td><td><div id="access_token_text"></div></td><td><div id="access_token" style="display: none"></div></td>
@@ -17,6 +17,7 @@
         <td>Expires in</td><td><div id="refresh_expires_in"></div></td></td>
     </tr>
 </table>
+<div id="token_json" style="display: none"></div>
 </body>
     <script>
             var _GET = (function() {
@@ -47,6 +48,10 @@ console.log(info);
 var fields = ["access_token", "refresh_token", "expires_in", "refresh_expires_in"];
 for (var i=0; i < fields.length;++i) {
   displayField(document, info, fields[i]);
+}
+var element = document.getElementById("token_json");
+if (element) {
+    element.innerText = _GET.token_json;
 }
             </script>
     <html>
