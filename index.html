@@ -20,7 +20,7 @@
 <div id="token_json" style="display: none"></div>
 </body>
     <script>
-            var _GET = (function() {
+            var request = (function() {
     var _get = {};
     var re = /[?&]([^=&]+)(=?)([^&]*)/g;
     while (m = re.exec(location.search))
@@ -42,8 +42,7 @@ function displayField(doc, source, name) {
     }
 }
 
-var info = JSON.parse(_GET.token_json);
-console.log(info);
+var info = JSON.parse(request.token_json);
 
 var fields = ["access_token", "refresh_token", "expires_in", "refresh_expires_in"];
 for (var i=0; i < fields.length;++i) {
